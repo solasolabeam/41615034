@@ -1,0 +1,117 @@
+직진
+#include <mega128.h>
+
+unsigned char data[8]={0x01, 0x03, 0x02, 0x06, 0x04, 0x0c, 0x08, 0x09};
+//unsigned char data[4]={0x01, 0x02, 0x04, 0x08};
+//unsigned char data[4]={0x03,0x06,0x0c,0x09};
+
+void delay(signed long del)
+{
+ while(del--);
+}
+
+void main(void)
+{
+ signed char i;
+ unsigned char k;
+ DDRC=0xff;
+ DDRF=0xff;
+ for(k=0;k<25;k++)
+ {                       
+  for(i=0;i<8;i++)
+  {
+   PORTC=data[i];
+   PORTF=data[7-i];
+   delay(3000);
+  }
+ }
+}
+
+후진
+#include <mega128.h>
+
+//unsigned char data[8]={0x01, 0x03, 0x02, 0x06, 0x04, 0x0c, 0x08, 0x09};
+//unsigned char data[4]={0x01, 0x02, 0x04, 0x08};
+unsigned char data[4]={0x03,0x06,0x0c,0x09};
+
+void delay(signed long del)
+{
+ while(del--);
+}
+
+void main(void)
+{
+ signed char i;
+ unsigned char k;
+ DDRC=0xff;
+ DDRF=0xff;
+ for(k=0;k<50;k++)
+ {                       
+  for(i=0;i<4;i++)
+  {
+   PORTC=data[3-i];
+   PORTF=data[i];
+   delay(3000);
+  }
+ }
+}
+
+
+좌회전
+#include <mega128.h>
+
+unsigned char data[8]={0x01, 0x03, 0x02, 0x06, 0x04, 0x0c, 0x08, 0x09};
+//unsigned char data[4]={0x01, 0x02, 0x04, 0x08};
+//unsigned char data[4]={0x03,0x06,0x0c,0x09};
+
+void delay(signed long del)
+{
+ while(del--);
+}
+
+void main(void)
+{
+ signed char i;
+ unsigned char k;
+ DDRC=0xff;
+ DDRF=0xff;
+ for(k=0;k<50;k++)
+ {                       
+  for(i=7;i>-1;i--)
+  {
+   PORTC=data[i];
+   PORTF=data[i];
+   delay(3000);
+  }
+ }
+}
+
+
+우회전
+#include <mega128.h>
+
+unsigned char data[8]={0x01, 0x03, 0x02, 0x06, 0x04, 0x0c, 0x08, 0x09};
+//unsigned char data[4]={0x01, 0x02, 0x04, 0x08};
+//unsigned char data[4]={0x03,0x06,0x0c,0x09};
+
+void delay(signed long del)
+{
+ while(del--);
+}
+
+void main(void)
+{
+ signed char i;
+ unsigned char k;
+ DDRC=0xff;
+ DDRF=0xff;
+ for(k=0;k<50;k++)
+ {                       
+  for(i=0;i<8;i++)
+  {
+   PORTC=data[i];
+   PORTF=data[i];
+   delay(3000);
+  }
+ }
+}
